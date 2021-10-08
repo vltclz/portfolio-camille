@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reportages",
+  "info": {
+    "name": "Reportage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titre": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
