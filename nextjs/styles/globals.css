@@ -15,3 +15,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --text-black: #292929;
+}
