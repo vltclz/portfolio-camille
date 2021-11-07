@@ -1,3 +1,13 @@
 .title {
   color: var(--text-black);
 }
+
+.imageContainer {
+  position: relative;
+  width: 320px;
+  height: 180px;
+}
+
+.image {
+  object-fit: cover;
+}
