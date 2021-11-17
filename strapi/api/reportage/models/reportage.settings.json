@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "titre": {
+    "title": {
       "type": "string"
     },
     "description": {
@@ -29,6 +29,27 @@
       "plugin": "upload",
       "required": false,
       "pluginOptions": {}
+    },
+    "url": {
+      "type": "string"
+    },
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "publication": {
+      "type": "date"
+    },
+    "show": {
+      "type": "string"
     }
   }
 }
