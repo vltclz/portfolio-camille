@@ -5,6 +5,12 @@ export const container = css`
   grid-auto-flow: column;
   max-width: 400px;
   margin: auto;
+
+  @media only screen and (max-width: 400px) {
+    grid-auto-flow: row;
+    grid-row-gap: 32px;
+    text-align: center;
+  }
 `;
 
 export const legend = css`
@@ -14,4 +20,8 @@ export const legend = css`
 
 export const alignRight = css`
   text-align: right;
+
+  @media only screen and (max-width: 400px) {
+    text-align: center;
+  }
 `;
