@@ -82,14 +82,7 @@ export default function PhotoPanel({ photos, onClose }) {
         </button>
 
         <div className={styles.photoContainer(isLoading)}>
-          {isLoading && (
-            <Image
-              src="/loader.png"
-              width={32}
-              height={32}
-              className={styles.loader}
-            />
-          )}
+          {isLoading && <Image src="/loader.png" width={32} height={32} />}
           {currentPhoto && (
             <Image
               src={`${process.env.STRAPI_URL}${currentPhoto.photo.url}`}

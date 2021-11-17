@@ -49,7 +49,7 @@ export default function Header() {
   return (
     <>
       <Head>
-        <title>{currentPage.title}</title>
+        <title>{currentPage?.title}</title>
       </Head>
       <header className={styles.container}>
         <div className={styles.logoContainer}>
