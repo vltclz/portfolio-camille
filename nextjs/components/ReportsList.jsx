@@ -31,7 +31,10 @@ export default function ReportsList({ reportages }) {
           </a>
           <div className={styles.logoContainer}>
             <Image
-              src={`${process.env.STRAPI_URL}${reportage.logo.formats.small.url}`}
+              src={`${process.env.STRAPI_URL}${
+                reportage.logo.formats.small?.url ??
+                reportage.logo.formats.small?.thumbnail
+              }`}
               className={styles.logo}
               layout="fill"
             />

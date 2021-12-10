@@ -181,6 +181,13 @@ $ sudo systemctl restart nginx
 
 #
 
+## DNS Configuration
+
+In OVH/Google Domain/others, link your domain to your server, by adding new DNS entries.
+You must add an entry for `example.com`, `www.example.com` and `strapi.example.com`. Set the Type to `A` and the Target to the server's IP address for all of them.
+
+#
+
 ## HTTPS/SSL Encryption
 
 Install Certbot :
@@ -305,3 +312,7 @@ sudo supervisorctl reread
 sudo supervisorctl update
 sudo supervisorctl start webhooks:*
 ```
+
+#
+
+## Troubleshooting
