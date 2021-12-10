@@ -79,12 +79,14 @@ const rotate = keyframes`
   }
   `;
 
+export const animated = css`
+  animation: ${rotate} 1s linear infinite;
+`;
+
 const loadingContainer = css`
   width: fit-content;
   height: fit-content;
   justify-self: center;
-  animation: ${rotate} 1s linear infinite;
-  opacity: 0.8;
 `;
 
 export const photoContainer = (isLoading) => css`

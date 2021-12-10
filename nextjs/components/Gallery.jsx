@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import * as styles from './Gallery.styles';
 import PhotoPanel from './PhotoPanel';
+import { photoUrl } from '../utils/images';
 
 export default function Gallery({ photos }) {
   const router = useRouter();
@@ -55,7 +56,7 @@ export default function Gallery({ photos }) {
             }}
           >
             <Image
-              src={`${process.env.STRAPI_URL}${photo.formats.small.url}`}
+              src={photoUrl(photo, 'small')}
               className={styles.photo}
               layout="fill"
               priority

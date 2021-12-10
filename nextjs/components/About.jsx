@@ -2,12 +2,13 @@ import React from 'react';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import * as styles from './About.styles';
+import { photoUrl } from '../utils/images';
 
 export default function About({ content, cover }) {
   return (
     <section className={styles.container}>
       <Image
-        src={`${process.env.STRAPI_URL}${cover.url}`}
+        src={photoUrl(cover)}
         width={cover.width}
         height={cover.height}
         layout="responsive"

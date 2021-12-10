@@ -2,6 +2,7 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Image from 'next/image';
 import * as styles from './ReportsList.styles';
+import { photoUrl } from '../utils/images';
 
 export default function ReportsList({ reportages }) {
   return (
@@ -15,28 +16,26 @@ export default function ReportsList({ reportages }) {
             className={styles.coverContainer}
           >
             <Image
-              src={`${process.env.STRAPI_URL}${reportage.cover.url}`}
+              src={photoUrl(reportage.cover, 'medium')}
               className={styles.cover}
               layout="fill"
               priority
             />
             <div className={styles.coverOverlay}>
               <Image
-                src="/play_white.png"
-                width={32}
-                height={32}
+                src="/play_white.svg"
+                width={48}
+                height={48}
                 layout="fixed"
               />
             </div>
           </a>
           <div className={styles.logoContainer}>
             <Image
-              src={`${process.env.STRAPI_URL}${
-                reportage.logo.formats.small?.url ??
-                reportage.logo.formats.thumbnail.url
-              }`}
+              src={photoUrl(reportage.logo, 'small')}
               className={styles.logo}
               layout="fill"
+              priority
             />
           </div>
           <h3 className={styles.title}>

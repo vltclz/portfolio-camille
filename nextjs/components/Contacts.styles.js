@@ -13,7 +13,7 @@ export const container = css`
   }
 `;
 
-export const legend = css`
+export const label = css`
   font-family: 'Archivo Black', sans-serif;
   margin-bottom: 8px;
 `;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import * as styles from './PhotoPanel.styles';
+import { photoUrl } from '../utils/images';
 
 export default function PhotoPanel({ photos, onClose }) {
   const router = useRouter();
@@ -74,18 +75,25 @@ export default function PhotoPanel({ photos, onClose }) {
           onClick={goLeft}
         >
           <Image
-            src="/chevron_left.png"
-            width={24}
-            height={24}
+            src="/chevron_left.svg"
+            width={32}
+            height={32}
             layout="fixed"
           />
         </button>
 
         <div className={styles.photoContainer(isLoading)}>
-          {isLoading && <Image src="/loader.png" width={32} height={32} />}
+          {isLoading && (
+            <Image
+              src="/loader.svg"
+              width={64}
+              height={64}
+              className={styles.animated}
+            />
+          )}
           {currentPhoto && (
             <Image
-              src={`${process.env.STRAPI_URL}${currentPhoto.photo.url}`}
+              src={photoUrl(currentPhoto.photo, 'large')}
               className={styles.photo(isLoading)}
               layout="fill"
               onLoadingComplete={() => {
@@ -102,9 +110,9 @@ export default function PhotoPanel({ photos, onClose }) {
           onClick={goRight}
         >
           <Image
-            src="/chevron_right.png"
-            width={24}
-            height={24}
+            src="/chevron_right.svg"
+            width={32}
+            height={32}
             layout="fixed"
           />
         </button>
@@ -119,7 +127,7 @@ export default function PhotoPanel({ photos, onClose }) {
             )}
           </div>
           <button type="button" className={styles.closeButton} onClick={close}>
-            <Image src="/cross.png" width={24} height={24} layout="fixed" />
+            <Image src="/cross.svg" width={24} height={24} layout="fixed" />
           </button>
         </div>
       </div>
