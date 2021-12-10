@@ -14,7 +14,7 @@ export async function getStaticProps() {
         a.publication.split('-')[0],
         a.publication.split('-')[1] - 1,
         a.publication.split('-')[2]
-      ) <
+      ) >
       new Date(
         b.publication.split('-')[0],
         b.publication.split('-')[1] - 1,
