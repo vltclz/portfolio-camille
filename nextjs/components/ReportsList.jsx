@@ -33,7 +33,7 @@ export default function ReportsList({ reportages }) {
             <Image
               src={`${process.env.STRAPI_URL}${
                 reportage.logo.formats.small?.url ??
-                reportage.logo.formats.small?.thumbnail
+                reportage.logo.formats.thumbnail.url
               }`}
               className={styles.logo}
               layout="fill"
