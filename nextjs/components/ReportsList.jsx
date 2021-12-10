@@ -43,7 +43,11 @@ export default function ReportsList({ reportages }) {
             <small className={styles.show}>{reportage.show}</small>
           </h3>
           <div className={styles.description}>
-            <span className={styles.publication}>{reportage.publication}</span>
+            <span className={styles.publication}>
+              {reportage.publication.split('-')[2]}/
+              {reportage.publication.split('-')[1]}/
+              {reportage.publication.split('-')[0]}
+            </span>
             <ReactMarkdown>{reportage.description}</ReactMarkdown>
           </div>
         </article>

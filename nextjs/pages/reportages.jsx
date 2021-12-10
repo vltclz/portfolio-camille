@@ -8,7 +8,23 @@ export default function Reportages({ reportages }) {
 
 export async function getStaticProps() {
   const res = await axios.get(process.env.ENDPOINT_REPORTAGES);
-  res.data.sort((a, b) => (Date(a.publication) > Date(b.publication) ? -1 : 1));
+  res.data.sort((a, b) => {
+    if (
+      new Date(
+        a.publication.split('-')[0],
+        a.publication.split('-')[1] - 1,
+        a.publication.split('-')[2]
+      ) <
+      new Date(
+        b.publication.split('-')[0],
+        b.publication.split('-')[1] - 1,
+        b.publication.split('-')[2]
+      )
+    ) {
+      return -1;
+    }
+    return 1;
+  });
 
   return {
     props: {
