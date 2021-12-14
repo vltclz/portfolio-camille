@@ -1,4 +1,4 @@
 # portfolio-camille
 
-Friend's portfolio, using Next JS and Strapi  
-⚠️ This is a Work In Progress
+[camilledesmaison.com](https://camilledesmaison.com)  
+Simple journalist portfolio, using Next JS and Strapi.

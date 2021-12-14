@@ -316,3 +316,5 @@ sudo supervisorctl start webhooks:*
 #
 
 ## Troubleshooting
+
+When building on the server, it's important to have a `.env.local` file with valid values and our Strapi already started as otherwise the pages won't build properly.
