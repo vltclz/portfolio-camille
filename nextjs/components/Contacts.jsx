@@ -1,16 +1,22 @@
 import React from 'react';
 import * as styles from './Contacts.styles';
 
-export default function Contacts() {
+export default function Contacts({ email, phone, linkedin }) {
   return (
     <section className={styles.container}>
       <div>
         <div className={styles.label}>Email</div>
-        <a href="mailto:camdesmaison@gmail.com">camdesmaison@gmail.com</a>
+        <a href={`mailto:${email}`}>{email}</a>
       </div>
-      <div className={styles.alignRight}>
+      <div>
         <div className={styles.label}>Téléphone</div>
-        <a href="tel:+33684945088">06 84 94 50 88</a>
+        <a href={`tel:${phone}`}>{phone}</a>
+      </div>
+      <div>
+        <div className={styles.label}>LinkedIn</div>
+        <a href={linkedin} target="_blank" rel="noreferrer">
+          Camille Desmaison--Fernandez
+        </a>
       </div>
     </section>
   );

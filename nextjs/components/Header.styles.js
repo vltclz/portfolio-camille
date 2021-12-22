@@ -11,17 +11,6 @@ export const container = css`
   }
 `;
 
-export const logoContainer = css`
-  display: grid;
-  width: fit-content;
-  grid-auto-flow: column;
-  grid-column-gap: 16px;
-
-  @media only screen and (max-width: 650px) {
-    margin: auto;
-  }
-`;
-
 export const navList = css`
   display: grid;
   grid-auto-flow: column;
@@ -69,15 +58,8 @@ export const nameLogo = css`
   text-align: left;
   line-height: 14px;
   cursor: pointer;
-`;
 
-export const socials = css`
-  display: grid;
-  grid-auto-flow: row;
-  grid-row-gap: 8px;
-  justify-self: self-start;
-  list-style: none;
-  width: fit-content;
-  padding: 0;
-  margin: 0;
+  @media only screen and (max-width: 650px) {
+    text-align: center;
+  }
 `;

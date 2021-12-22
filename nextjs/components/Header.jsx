@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { cx } from '@emotion/css';
@@ -29,19 +28,6 @@ const pages = [
   },
 ];
 
-const socials = [
-  {
-    key: 'linkedin',
-    src: '/logo_linkedin.png',
-    href: 'https://www.linkedin.com/in/camille-desmaison-fernandez-791935b6',
-  },
-  {
-    key: 'instagram',
-    src: '/logo_instagram.png',
-    href: 'https://www.instagram.com/steadicam_/',
-  },
-];
-
 export default function Header() {
   const router = useRouter();
   const currentPage = pages.find(({ route }) => route === router.route);
@@ -52,27 +38,15 @@ export default function Header() {
         <title>{currentPage?.title}</title>
       </Head>
       <header className={styles.container}>
-        <div className={styles.logoContainer}>
-          <ul className={styles.socials}>
-            {socials.map(({ key, src, href }) => (
-              <li key={key}>
-                <a href={href} target="_blank" rel="noreferrer">
-                  <Image src={src} width={16} height={16} priority />
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <Link href="/">
-            <span className={styles.nameLogo}>
-              CAMILLE
-              <br />
-              DESMAISON
-              <br />
-              FERNANDEZ
-            </span>
-          </Link>
-        </div>
+        <Link href="/">
+          <span className={styles.nameLogo}>
+            CAMILLE
+            <br />
+            DESMAISON
+            <br />
+            FERNANDEZ
+          </span>
+        </Link>
 
         <nav>
           <ul className={styles.navList}>

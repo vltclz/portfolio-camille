@@ -6,6 +6,7 @@ module.exports = {
     ENDPOINT_ACCUEIL: process.env.ENDPOINT_ACCUEIL,
     ENDPOINT_REPORTAGES: process.env.ENDPOINT_REPORTAGES,
     ENDPOINT_PHOTOS: process.env.ENDPOINT_PHOTOS,
+    ENDPOINT_CONTACT: process.env.ENDPOINT_CONTACT,
   },
   images: {
     domains: [process.env.IMAGES_DOMAIN],
