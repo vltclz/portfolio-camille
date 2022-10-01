@@ -18,6 +18,7 @@
     "react/no-danger": 0,
     "react/jsx-one-expression-per-line": 0,
     "comma-dangle": 0,
-    "operator-linebreak": 0
+    "operator-linebreak": 0,
+    "indent": 0,
   }
 }

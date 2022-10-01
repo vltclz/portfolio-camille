@@ -6,9 +6,11 @@ export function photoUrl(photoObject, maxFormat) {
     return `${process.env.STRAPI_URL}${photoObject.url}`;
   }
   const possibleFormats = formats.slice(formats.indexOf(maxFormat));
-  const url = possibleFormats.reduce(
-    (prev, curr) => prev ?? photoObject.formats[curr]?.url,
-    null
-  );
+  const url = photoObject.formats
+    ? possibleFormats.reduce(
+        (prev, curr) => prev ?? photoObject.formats[curr]?.url,
+        null
+      )
+    : photoObject.url;
   return `${process.env.STRAPI_URL}${url}`;
 }

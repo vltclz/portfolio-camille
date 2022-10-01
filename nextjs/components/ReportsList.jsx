@@ -8,7 +8,10 @@ export default function ReportsList({ reportages }) {
   return (
     <section className={styles.container}>
       {reportages.map((reportage) => (
-        <article className={styles.reportGrid} key={reportage.id}>
+        <article
+          className={styles.reportGrid(Boolean(reportage.logo))}
+          key={reportage.id}
+        >
           <a
             href={reportage.url}
             target="_blank"
@@ -30,14 +33,16 @@ export default function ReportsList({ reportages }) {
               />
             </div>
           </a>
-          <div className={styles.logoContainer}>
-            <Image
-              src={photoUrl(reportage.logo, 'small')}
-              className={styles.logo}
-              layout="fill"
-              priority
-            />
-          </div>
+          {reportage.logo && (
+            <div className={styles.logoContainer}>
+              <Image
+                src={photoUrl(reportage.logo, 'small')}
+                className={styles.logo}
+                layout="fill"
+                priority
+              />
+            </div>
+          )}
           <h3 className={styles.title}>
             {reportage.title}
             <small className={styles.show}>{reportage.show}</small>

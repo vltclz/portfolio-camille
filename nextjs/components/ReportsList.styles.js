@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { css } from "@emotion/css";
 
 export const container = css`
   display: grid;
@@ -12,26 +12,26 @@ export const container = css`
 
 export const title = css`
   grid-area: title;
-  font-family: 'Archivo Black', sans-serif;
+  font-family: "Archivo Black", sans-serif;
   font-weight: 500;
   margin: 0;
 `;
 
 export const show = css`
-  font-family: 'Archivo', sans-serif;
+  font-family: "Archivo", sans-serif;
   opacity: 0.9;
   display: block;
 `;
 
-export const reportGrid = css`
+export const reportGrid = (hasLogo) => css`
   display: grid;
   grid-column-gap: 24px;
   grid-row-gap: 8px;
   grid-template-columns: 40px 1fr;
   grid-template-areas:
-    'cover cover'
-    'logo title'
-    'description description';
+    "cover cover"
+    "${hasLogo ? 'logo' : 'title'} title"
+    "description description";
   height: fit-content;
 `;
 
