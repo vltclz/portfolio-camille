@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
 
 export const galleryContainer = css`
   display: grid;
@@ -40,4 +40,29 @@ export const titleOverlay = css`
   :hover {
     opacity: 1;
   }
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(359deg);
+  }
+  `;
+
+export const animated = css`
+  animation: ${rotate} 1s linear infinite;
+`;
+
+export const loadingContainer = css`
+  height: 250px;
+  display: flex;
+`;
+
+export const loaderContainer = css`
+  width: fit-content;
+  margin: auto;
+  vertical-align: center;
 `;

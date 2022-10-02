@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import * as styles from './Gallery.styles';
@@ -8,6 +8,7 @@ import { photoUrl } from '../utils/images';
 export default function Gallery({ photos }) {
   const router = useRouter();
   const thumbnailsRefs = useRef({});
+  const [allLoading, setAllLoading] = useState(true);
 
   useEffect(() => {
     thumbnailsRefs.current = photos.reduce((acc, curr) => {
@@ -38,6 +39,19 @@ export default function Gallery({ photos }) {
         }}
       />
 
+      {allLoading && (
+        <section className={styles.loadingContainer}>
+          <div className={styles.loaderContainer}>
+            <Image
+              src="/loader.svg"
+              width={64}
+              height={64}
+              className={styles.animated}
+            />
+          </div>
+        </section>
+      )}
+
       <section className={styles.galleryContainer}>
         {photos.map(({ photo, title, id }) => (
           <div
@@ -60,6 +74,7 @@ export default function Gallery({ photos }) {
               className={styles.photo}
               layout="fill"
               priority
+              onLoadingComplete={() => allLoading && setAllLoading(false)}
             />
             <div className={styles.titleOverlay}>
               <span>{title}</span>
