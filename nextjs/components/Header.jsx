@@ -17,6 +17,11 @@ const pages = [
     title: 'Reportages',
   },
   {
+    route: '/podcasts',
+    text: 'PODCASTS',
+    title: 'Podcasts',
+  },
+  {
     route: '/photos',
     text: 'PHOTOS',
     title: 'Photos',

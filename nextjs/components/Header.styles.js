@@ -26,13 +26,13 @@ export const navList = css`
 
   @media only screen and (max-width: 650px) {
     margin: auto;
-    font-size: 14px;
-    grid-column-gap: 12px;
+    font-size: 12px;
+    grid-column-gap: 11px;
   }
 
   @media only screen and (max-width: 400px) {
-    font-size: 12px;
-    grid-column-gap: 8px;
+    font-size: 11px;
+    grid-column-gap: 7px;
   }
 `;
 
