@@ -33,9 +33,13 @@ echo "User: $(whoami)"
 echo "Groups: $(groups)"
 ```
 
-And then give permission to that user/group in the appropriate NextJS directory
+And then "force" the execution of the necessary command lines in the sudoers file by running `sudo visudo` and adding that kind of lines :
 
-```bash
-$ sudo chown -R <username>:<group> /home/vltclz/portfolio-camille/nextjs
-$ sudo chmod -R 755 /home/vltclz/portfolio-camille/nextjs
 ```
+<user> ALL=(ALL) NOPASSWD: /usr/bin/pkill -f PM2
+<user> ALL=(ALL) NOPASSWD: /usr/bin/pm2 startup
+<user> ALL=(ALL) NOPASSWD: /usr/bin/pm2 save
+<user> ALL=(ALL) NOPASSWD: /usr/sbin/service nginx start
+```
+
+(If needed, do `which pm2` or `which service` to know where are located the actual command's full path)
